@@ -1,7 +1,7 @@
 """
 Author:         Zeyad E
 Description:    simulates a 2 player game of Tic-Tac-Toe
-Last Modified:  6/7/2021
+Last Modified:  6/23/2021
 """
 boardDict = {1: ' ', 2: ' ',3: ' ',     #representation of each position on the board
              4: ' ', 5: ' ',6: ' ',     #dictionary keys are integers 1-9
@@ -17,25 +17,32 @@ def printBoard(board):                  #prints the positions and the board
 
 print('''
       _____________________________________________
-            Hello and welcome to Tic-Tac-Toe!
-        The rules are simple. The grid is divided
+            Hello and welcome to Tic-Tac-Toe!       
+        The rules are simple. The grid is divided 
               into 9 squares to select from
                      1 | 2 | 3
                     ---+---+---
                      4 | 5 | 6
                     ---+---+---
                      7 | 8 | 9
-      _____________________________________________
+      _____________________________________________            
         ''')
 
-turn = 'X'                      #turn will start off as X then alternate X/O in the loop
-switch = True                   #used to switch turns
+turn = 'X'          #turn will start off as X then alternate X/O in the loop
+switch = True       #used to switch turns
 playerNum = '1'
 
-for i in range(9):              #9 possible turns
+for i in range(9):  #9 possible turns
     print('Where would you like to play player ' + playerNum + '?')
-    userIn = int(input())       #convert input to an integer so it can be used as a key in boardDict
+    while True:                     #loop to check if the input is a number. keeps looping till valid input recieved
+        userIn = input()
+        if userIn.isdigit():
+            userIn = int(userIn)    #convert input to an integer so it can be used as a key in boardDict
+            break
+        print('ERROR: Input was not numeric, try again')
+
     boardDict[userIn] = turn    #update the value on the board
+
     #all possible victory combinations.
     if  boardDict[1] == boardDict[2] == boardDict[3] == 'X' or\
         boardDict[4] == boardDict[5] == boardDict[6] == 'X' or\
@@ -68,12 +75,10 @@ for i in range(9):              #9 possible turns
         switch = True
         playerNum = '1'
 
-
     printBoard(boardDict)
 
 #Todo
 '''
 make victory comparisons neater
 prevent issue with players overwriting positions on board
-prevent invalid inputs and ask the user to try again
 '''
