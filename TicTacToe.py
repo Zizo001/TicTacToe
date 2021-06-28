@@ -1,8 +1,7 @@
-
 """
 Author:         Zeyad E
 Description:    simulates a 2 player game of Tic-Tac-Toe
-Last Modified:  6/6/2021
+Last Modified:  6/7/2021
 """
 boardDict = {1: ' ', 2: ' ',3: ' ',     #representation of each position on the board
              4: ' ', 5: ' ',6: ' ',     #dictionary keys are integers 1-9
@@ -37,22 +36,28 @@ for i in range(9):              #9 possible turns
     print('Where would you like to play player ' + playerNum + '?')
     userIn = int(input())       #convert input to an integer so it can be used as a key in boardDict
     boardDict[userIn] = turn    #update the value on the board
-
-    if i > 3:                   #???
-                                #all possible victory combinations
-        if  boardDict[1] == boardDict[2] == boardDict[3] or\
-            boardDict[4] == boardDict[5] == boardDict[6] or\
-            boardDict[7] == boardDict[8] == boardDict[9] or\
-            boardDict[1] == boardDict[4] == boardDict[7] or\
-            boardDict[2] == boardDict[5] == boardDict[8] or\
-            boardDict[3] == boardDict[6] == boardDict[9] or\
-            boardDict[1] == boardDict[5] == boardDict[9] or\
-            boardDict[3] == boardDict[5] == boardDict[7]:
-            printBoard(boardDict) #if fulfilled, print board/winning screen and exit the loop
-            print('_____________________________________________')
-            print('Congratz Player ' + playerNum + ', YOU WIN!')
-            print('_____________________________________________')
-            break
+    #all possible victory combinations.
+    if  boardDict[1] == boardDict[2] == boardDict[3] == 'X' or\
+        boardDict[4] == boardDict[5] == boardDict[6] == 'X' or\
+        boardDict[7] == boardDict[8] == boardDict[9] == 'X' or\
+        boardDict[1] == boardDict[4] == boardDict[7] == 'X' or\
+        boardDict[2] == boardDict[5] == boardDict[8] == 'X' or\
+        boardDict[3] == boardDict[6] == boardDict[9] == 'X' or\
+        boardDict[1] == boardDict[5] == boardDict[9] == 'X' or\
+        boardDict[3] == boardDict[5] == boardDict[7] == 'X' or\
+        boardDict[1] == boardDict[2] == boardDict[3] == 'O' or\
+        boardDict[4] == boardDict[5] == boardDict[6] == 'O' or\
+        boardDict[7] == boardDict[8] == boardDict[9] == 'O' or\
+        boardDict[1] == boardDict[4] == boardDict[7] == 'O' or\
+        boardDict[2] == boardDict[5] == boardDict[8] == 'O' or\
+        boardDict[3] == boardDict[6] == boardDict[9] == 'O' or\
+        boardDict[1] == boardDict[5] == boardDict[9] == 'O' or\
+        boardDict[3] == boardDict[5] == boardDict[7] == 'O' :
+        printBoard(boardDict) #if fulfilled, print board/winning screen and exit the loop
+        print('_____________________________________________')
+        print('Congratz Player ' + playerNum + ', YOU WIN!')
+        print('_____________________________________________')
+        break
 
     if switch == True:  #initially true, so we will swap to player 2
         turn = 'O'
@@ -71,5 +76,4 @@ for i in range(9):              #9 possible turns
 make victory comparisons neater
 prevent issue with players overwriting positions on board
 prevent invalid inputs and ask the user to try again
-prevent victory conditions caused by empty spaces (e.g. leave bottom row empty, eventually win condition will trigger)
 '''
