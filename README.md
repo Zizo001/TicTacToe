@@ -21,4 +21,5 @@ To run the game, navigate to the file's directory and run the following command:
 python TicTacToe.py
 ```
 # Demo
+![1](https://user-images.githubusercontent.com/54548478/123847376-620e5800-d8cb-11eb-9d48-413f72f4c8ea.PNG)
 
