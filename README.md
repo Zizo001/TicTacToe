@@ -1,5 +1,5 @@
 # TicTacToe
-A simple game of Tic-Tac-Toe with a text-based GUI in Python. The project can serve as a fun game and as a The objective of the game is to match 3 boxes in a row. This can be done horizontally, vertically, or diagonally. 
+A simple game of Tic-Tac-Toe with a text-based GUI in Python. The project can serve as a fun game and as an example of the use of dictionaries in python. The objective of the game is to match 3 boxes in a row. This can be done horizontally, vertically, or diagonally. 
 It is meant to be played with 2 players. To run the game, use the command line interface and type the following:
 
 # Getting Started
