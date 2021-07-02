@@ -1,6 +1,6 @@
 # TicTacToe
-A simple game of Tic-Tac-Toe with a text-based GUI in Python. The project can serve as a fun game and as an example of the use of dictionaries in python. The objective of the game is to match 3 boxes in a row. This can be done horizontally, vertically, or diagonally. 
-It is meant to be played with 2 players. To run the game, use the command line interface and type the following:
+A simple game of Tic-Tac-Toe with a text-based GUI in Python. The project can serve as a fun game and as an example of the usefulness of dictionaries in python. The objective of the game is to match 3 boxes in a row. This can be done horizontally, vertically, or diagonally. 
+It is meant to be played with 2 players.
 
 # Getting Started
 The only prerequisite to run this is to have python installed. We can check if python is installed using either of the following commands:
